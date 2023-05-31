@@ -39,6 +39,7 @@ public class UserController {
 	
 	@Autowired
 	private ChatReservationService chatReservationService;
+
 	
 	@RequestMapping(value = "/login")
 	public String loginGet(Model model) {
@@ -120,8 +121,11 @@ public class UserController {
 		    	int chatting_id = chatService.selectChattingId(userId, planner_id);
 				String nextReservedDateTime = chatReservationService.selectNextReservedDatetime(chatting_id);
 				// 사용자가 예약한 플래너 별 다음 예약 시간을 Map 에 저장.
+				logger.info("planner_id : {}", planner_id);
+				logger.info("nextReservedDateTime : {}", nextReservedDateTime);
 				reservedDates.put(planner_id, nextReservedDateTime);
 			}
+		    model.addAttribute("reservedDates", reservedDates);
 			return "userChat";
 		}
 		else if((returnVo2 != null && returnVo == null) ) {

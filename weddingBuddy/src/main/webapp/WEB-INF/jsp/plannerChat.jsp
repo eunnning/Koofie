@@ -132,12 +132,12 @@
 		<div class="row">
 			<div class="col-lg-10 col-md-10 col-sm-12">
 				<c:forEach items="${PlannerInfo}" var="info">
-					<div class="list-group" >
+					<div class="list-group" onClick=location.href='<c:url value="/start"/>?to_id=${ChatWithUser.planner_id }&from_id=${info.user_id }' >
 						 <a href="#"
 							class="list-group-item list-group-item-action d-flex justify-content-between align-items-center custom-list-item">
 							<div>
 								<h5 class="mb-1">${info.name }</h5>
-								<p class="mb-1">채팅예약 시간: ${reservedDatesMap[planner.planner_id]}</p>
+								<p class="mb-1">채팅예약 시간: ${reservedDates[planner.planner_id]}</p>
 							</div>
 							
 							<%-- <div>
@@ -167,7 +167,10 @@
 	</div>
 
 	<jsp:include page="footer.jsp" />
+
 	<!-- Bootstrap JS 파일 로드 -->
+
+
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
 </body>

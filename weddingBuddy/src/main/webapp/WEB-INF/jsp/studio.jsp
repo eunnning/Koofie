@@ -16,12 +16,14 @@
 .image-container {
 	text-align: center;
 	margin-bottom: 10px;
+	max-height: 200px;
 }
 
 .image-container img {
 	display: flex;
 	padding : 5px;
 	margin : 3px;
+	justify-content: center;
 	max-width: 300px;
 	height: auto;
 	margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */

@@ -8,7 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
+
 <title>플래너 상세보기</title>
 
 <!-- bootstrap CSS -->
@@ -18,8 +20,9 @@
 	crossorigin="anonymous">
 
 <style>
-<
-style>.review-item {
+
+	.review-item {
+
 	margin-bottom: 20px;
 	padding: 10px;
 	border: 1px solid #ccc;
@@ -238,6 +241,7 @@ style>.review-item {
 		</div>
 	</div>
 
+
 	<div class="image-container">
 		<div class="image-about-planner">
 			<div class="main-image">
@@ -276,7 +280,6 @@ style>.review-item {
 			<div class="all-image-button">사진 더보기</div>
 		</button>
 	</div>
-
 
 
 	<!-- 모달 창 -->

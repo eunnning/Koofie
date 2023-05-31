@@ -35,12 +35,27 @@
 .custom-list-item {
 	background-color: #F4E0E0;
 	margin-bottom: 20px;
-	
+
 }
 
 .btn-primary, .btn-secondary {
 	margin-top: 10px;
 	margin-right: 10px;
+
+}
+
+.list-group {
+	border-radius: 30%;
+	background: #F5F5F5;
+	justify-content: center;
+	padding: 20px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+
 }
 
 
@@ -73,7 +88,9 @@
 	line-height: 2;
 }
 
+
 .list-group-item:hover{
+
 	border-color: pink;
 }
 
@@ -93,10 +110,10 @@
 	display: flex;
 	justify-content: center;
 }
+
 .contact-button button + button {
   	margin-left: 20px; /* 다음 버튼과의 간격 설정 */
 }
-
 
 </style>
 
@@ -115,11 +132,13 @@
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb justify-content-center">
 						<li class="breadcrumb-item"><a class="text-white"
-							href="<c:url value="/mypage/like"/>">찜</a></li>
+
+							href="<c:url value="/mypage/like"/>">Home</a></li>
 						<li class="breadcrumb-item"><a class="text-white"
-							href="<c:url value='/mypage/'/>">내정보수정</a></li>
+							href="<c:url value='/mypage/'/>">찜</a></li>
 						<li class="breadcrumb-item"><a class="text-white"
-							href="<c:url value='/mypage/chat'/>">내채팅방</a></li>
+							href="<c:url value='/mypage/chat'/>">내 정보 수정</a></li>
+
 					</ol>
 				</nav>
 			</div>
@@ -131,15 +150,17 @@
 		<div class="row">
 			<div class="col-lg-10 col-md-10 col-sm-12">
 				<c:forEach items="${chatPlanner}" var="planner">
+
 					<div class="list-group" >
 						<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center custom-list-item">
 							<div>
 								<h5 class="mb-1">${planner.name }</h5>
 								<!-- 플래너 이름 -->
-								<p class="mb-1">채팅예약 시간: ${reservedDatesMap[planner.planner_id]}</p>
+								<p class="mb-1">채팅예약 시간: ${reservedDates[planner.planner_id]}</p>
 								<!-- 채팅예약 시간 -->
 							</div>
 							<%-- <div>
+
 								<button type="button" class="btn btn-primary"
 									onClick=location.href=
 									'<c:url value="/start"/>?to_id=${LoginUser.user_id }
@@ -148,6 +169,7 @@
 									onClick="location.href='<c:url value="/review?planner_id=${planner.planner_id}&user_id=${LoginUser.user_id}"/>'">
 									리뷰 쓰기</button>
 							</div> --%>
+
 
 								<div class="contact-button">
 									<button
@@ -160,7 +182,6 @@
 									
 								</div>
 
-
 						</a>
 					</div>
 				</c:forEach>
@@ -169,7 +190,8 @@
 	</div>
 
 	<jsp:include page="footer.jsp" />
-	<!-- Bootstrap JS 파일 로드 -->
+
+	<!— Bootstrap JS 파일 로드 —>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
 </body>
